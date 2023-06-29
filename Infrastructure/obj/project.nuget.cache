@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "AE1uH5l46hqnyXoAvtl0oCGsbW7bxC1DqQOgDISCiP5zzHqS7ij02OjSJkt/m0HtD00QZRQdcz7r3TLMd7jSPQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Infrastructure\\Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kevin Vasquez\\.nuget\\packages\\mediatr\\12.0.1\\mediatr.12.0.1.nupkg.sha512",
+    "C:\\Users\\Kevin Vasquez\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Kevin Vasquez\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
