@@ -10,8 +10,8 @@ public record CreateTouristPackageCommand(
     string Description,
     DateTime Traveldate,
     Money Price,
-    List<CreateLineItemCommand> Items)
-    : IRequest<ErrorOr<Unit>>;
+    List<CreateLineItemCommand> Items
+    ) : IRequest<ErrorOr<Unit>>;
 
 public record CreateLineItemCommand(Guid DestinationId)
 {

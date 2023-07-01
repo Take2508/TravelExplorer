@@ -34,7 +34,7 @@ public sealed class UpdateReservationCommandHandler : IRequestHandler<UpdateRese
             return Error.Validation("Reservation.PhoneNumber", "Phone number has not valid format.");
         }
 
-        Reservation reservation = Reservation.Update(command.Id, command.Name, command.Email, phoneNumber, command.TouristPackageId, command.Traveldate);
+        Reservation reservation = Reservation.UpdateReservation(command.Id, command.Name, command.Email, phoneNumber, command.TouristPackageId, command.Traveldate);
 
         _reservationRepository.Update(reservation);
 

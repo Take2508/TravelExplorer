@@ -1,5 +1,4 @@
 using Application.Reservations.Common;
-using Domain.Customers;
 using Domain.Reservations;
 using Domain.TouristPackages;
 using Domain.ValueObjects;

@@ -31,6 +31,11 @@ public class TouristPackageRepository : ITouristPackageRepository
         _context.Add(touristPackage);
     }
 
+    // public async Task<TouristPackage?> GetByIdAsync(TouristPackageId id) 
+    // {
+    //     await _context.Customers.SingleOrDefaultAsync(c => c.Id == id);
+    // }
+
     public async Task<TouristPackage?> GetByIdWithLineItemAsync(TouristPackageId id)
     {
         return await _context.TouristPackages
@@ -38,28 +43,12 @@ public class TouristPackageRepository : ITouristPackageRepository
             .SingleOrDefaultAsync(o => o.Id == id);
     }
 
+
     public async Task<TouristPackage?> GetByIdAsync(TouristPackageId id)
     {
         return await _context.TouristPackages
             .Include(o => o.LineItems)
             .SingleOrDefaultAsync(o => o.Id == id);
-    }
-
-    public async Task<List<TouristPackage>> GetAll()
-    {
-        return await _context.TouristPackages
-            .Include(o => o.LineItems)
-            .ToListAsync();
-    }
-
-    public Task<Reservation?> GetByIdWithLineItemAsync(ReservationId id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public bool HasOneLineItem(TouristPackage touristpackage)
-    {
-        throw new NotImplementedException();
     }
 
     public async Task<List<TouristPackage>> Search(string name, string description, DateTime? travelDate, decimal? price, string ubication)
@@ -87,5 +76,27 @@ public class TouristPackageRepository : ITouristPackageRepository
         return await query
             .Include(o => o.LineItems)
             .ToListAsync();
+    }
+
+
+    // public async Task<TouristPackage?> GetByIdAsync(TouristPackageId id) => await _context.TouristPackages.SingleOrDefaultAsync(c => c.Id == id);
+
+    public async Task<List<TouristPackage>> GetAll()
+    {
+        return await _context.TouristPackages
+            .Include(o => o.LineItems)
+            .ToListAsync();
+    }
+
+    // public async Task<List<TouristPackage>> GetAll() => await _context.TouristPackages.ToListAsync();
+
+    public Task<Reservation?> GetByIdWithLineItemAsync(ReservationId id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool HasOneLineItem(TouristPackage touristpackage)
+    {
+        throw new NotImplementedException();
     }
 }

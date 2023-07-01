@@ -1,4 +1,4 @@
-using Destinations.Common;
+using Application.Destinations.Common;
 using Domain.Destinations;
 using ErrorOr;
 using MediatR;
@@ -19,12 +19,11 @@ internal sealed class GetAllDestinationsQueryHandler : IRequestHandler<GetAllDes
     {
         IReadOnlyList<Destination> destinations = await _destinationRepository.GetAll();
 
-        return destinations.Select(Destination => new DestinationResponse(
-                Destination.Id.Value,
-                Destination.Name,
-                Destination.Description,
-                Destination.Ubication,
-                Destination.Active
-                )).ToList();
+        return destinations.Select(destination => new DestinationResponse(
+                destination.Id.Value,
+                destination.Name,
+                destination.Description,
+                destination.Ubication
+            )).ToList();
     }
 }

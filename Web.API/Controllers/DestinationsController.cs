@@ -1,16 +1,15 @@
 using Application.Destinations;
-using Application.Destinations.Delete;
-using Application.Destinations.GetAll;
-using Application.Destinations.GetById;
-using Application.Destinations.Update;
-using Domain.Destinations;
-using ErrorOr;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Application.Destinations.GetAll;
 
 using Web.Api.Controllers;
+using Application.Destinations.GetById;
+using Application.Destinations.Update;
+using Application.Destinations.Delete;
+using ErrorOr;
 
-[Route("Destinations")]
+[Route("destinations")]
 public class Destinations : ApiController
 {
     private readonly ISender _mediator;
@@ -23,13 +22,14 @@ public class Destinations : ApiController
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var DestinationsResult = await _mediator.Send(new GetAllDestinationsQuery());
+        var destinationsResult = await _mediator.Send(new GetAllDestinationsQuery());
 
-        return DestinationsResult.Match(
-            Destinations => Ok(Destinations),
+        return destinationsResult.Match(
+            Destination => Ok(destinationsResult.Value),
             errors => Problem(errors)
         );
     }
+
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(Guid id)
     {

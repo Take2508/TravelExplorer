@@ -1,12 +1,24 @@
 using Domain.Destinations;
 using Domain.Primitives;
 using Domain.ValueObjects;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Domain.TouristPackages;
 
 public sealed class TouristPackage : AgregateRoot
 {
-    private readonly List<LineItem> _lineItems = new();
+    public TouristPackage(TouristPackageId id, string name, string description, DateTime traveldate, Money price)
+    {
+        Id = id;
+        Name = name;
+        Description = description;
+        TravelDate = traveldate;
+        Price = price;
+    }
+    // private readonly List<LineItem> _lineItems = new();
+    private readonly List<LineItem> _lineItems = new List<LineItem>();
     private TouristPackage()
     {
 
@@ -17,7 +29,8 @@ public sealed class TouristPackage : AgregateRoot
     public string Description { get; private set; }
     public DateTime TravelDate { get; private set; }
     public Money Price { get; private set; }
-    public IReadOnlyList<LineItem> LineItems => _lineItems.AsReadOnly();
+    // public IReadOnlyList<LineItem> LineItems => _lineItems.AsReadOnly();
+    public IReadOnlyList<LineItem> LineItems => new ReadOnlyCollection<LineItem>(_lineItems);
 
     public static TouristPackage Create(string name, string description, DateTime traveldate, Money price)
     {
@@ -32,13 +45,6 @@ public sealed class TouristPackage : AgregateRoot
 
         return touristpackage;
     }
-
-    public void Add(DestinationId destinationId)
-    {
-        var LineItem = new LineItem(new LineItemId(Guid.NewGuid()), Id, destinationId);
-
-        _lineItems.Add(LineItem);
-    }
     public void Update(string name, string description, DateTime traveldate, Money price)
     {
         Name = name;
@@ -46,7 +52,51 @@ public sealed class TouristPackage : AgregateRoot
         TravelDate = traveldate;
         Price = price;
     }
+    public void Add(DestinationId destinationId)
+    {
+        var LineItem = new LineItem(new LineItemId(Guid.NewGuid()), Id, destinationId);
 
+        _lineItems.Add(LineItem);
+    }
+    public void Update(DestinationId destinationId)
+    {
+        var LineItem = new LineItem(new LineItemId(Guid.NewGuid()), Id, destinationId);
+
+        _lineItems.Add(LineItem);
+    }
+
+
+    public static TouristPackage UpdateTouristPackage(
+        Guid id,
+        string name,
+        string description,
+        DateTime traveldate,
+        Money price)
+    {
+        return new TouristPackage(new TouristPackageId(id), name, description, traveldate, price);
+    }
+
+    // public static TouristPackage UpdateTouristPackage(Guid id, string name, string description, DateTime traveldate, Money price)
+    // {
+    //     // return new TouristPackage(new TouristPackageId(id), name, description, traveldate, price);
+    //     var touristpackage = new TouristPackage
+    //     {
+    //         Id = new TouristPackageId(Guid.NewGuid()),
+    //         Name = name,
+    //         Description = description,
+    //         TravelDate = traveldate,
+    //         Price = price
+    //     };
+
+    //     return touristpackage;
+    // }
+
+    public void Get(DestinationId destinationId)
+    {
+        var LineItem = new LineItem(new LineItemId(Guid.NewGuid()), Id, destinationId);
+
+        _lineItems.Add(LineItem);
+    }
 
     public void UpdateLineItem(LineItemId lineItemId, DestinationId destinationId)
     {
@@ -56,7 +106,18 @@ public sealed class TouristPackage : AgregateRoot
             lineItem.Update(destinationId);
         }
     }
+
     public void RemoveLineItem(LineItemId lineItemId, ITouristPackageRepository touristPackageRepository)
+    {
+        var lineItem = _lineItems.FirstOrDefault(li => li.Id == lineItemId);
+        if (lineItem != null)
+        {
+            _lineItems.Remove(lineItem);
+            touristPackageRepository.Update(this);
+        }
+    }
+
+    public void RemoveLineItems(LineItemId lineItemId, ITouristPackageRepository touristPackageRepository)
     {
         if (touristPackageRepository.HasOneLineItem(this))
         {
@@ -72,5 +133,4 @@ public sealed class TouristPackage : AgregateRoot
 
         _lineItems.Remove(lineItem);
     }
-
 }

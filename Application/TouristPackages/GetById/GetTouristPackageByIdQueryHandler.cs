@@ -43,7 +43,7 @@ internal sealed class GetTouristPackageByIdQueryHandler : IRequestHandler<GetTou
                 touristPackage.Price.Currency,
                 touristPackage.Price.Amount),
             touristPackage.TravelDate,
-            new List<LineItemResponse>());
+            new List<LineItemResponse>()); // Crear una lista vacía de LineItemResponse
 
         foreach (var lineItem in touristPackage.LineItems)
         {

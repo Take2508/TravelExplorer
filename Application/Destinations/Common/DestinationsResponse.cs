@@ -1,9 +1,11 @@
-namespace Destinations.Common;
+using MediatR;
+using ErrorOr;
 
-public record DestinationResponse(
-Guid Id,
-string Name,
-string Description,
-string Ubication,
-bool Active
-);
+namespace Application.Destinations.Common;
+
+
+public record DestinationResponse(Guid Id,
+    string name,
+    string description,
+    string ubication);
+

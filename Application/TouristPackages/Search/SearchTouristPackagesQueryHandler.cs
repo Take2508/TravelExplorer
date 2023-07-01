@@ -1,23 +1,27 @@
 using MediatR;
 using ErrorOr;
 using Application.TouristPackages.Common;
+using Domain.ValueObjects;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using Domain.TouristPackages;
 using Domain.Destinations;
 
 namespace Application.TouristPackages.Search
 {
-    public class SearchTouristPackageQueryHandler : IRequestHandler<SearchTouristPackageQuery, ErrorOr<List<TouristPackageResponse>>>
+    public class SearchTouristPackagesQueryHandler : IRequestHandler<SearchTouristPackagesQuery, ErrorOr<List<TouristPackageResponse>>>
     {
         private readonly ITouristPackageRepository _touristPackageRepository;
         private readonly IDestinationRepository _destinationRepository;
 
-        public SearchTouristPackageQueryHandler(ITouristPackageRepository touristPackageRepository, IDestinationRepository destinationRepository)
+        public SearchTouristPackagesQueryHandler(ITouristPackageRepository touristPackageRepository, IDestinationRepository destinationRepository)
         {
             _touristPackageRepository = touristPackageRepository;
             _destinationRepository = destinationRepository;
         }
 
-        public async Task<ErrorOr<List<TouristPackageResponse>>> Handle(SearchTouristPackageQuery query, CancellationToken cancellationToken)
+        public async Task<ErrorOr<List<TouristPackageResponse>>> Handle(SearchTouristPackagesQuery query, CancellationToken cancellationToken)
         {
             var touristPackages = await _touristPackageRepository.Search(query.Name, query.Description, query.TravelDate, query.Price, query.Ubication);
 

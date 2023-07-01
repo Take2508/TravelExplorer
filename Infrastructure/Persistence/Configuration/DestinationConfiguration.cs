@@ -16,6 +16,5 @@ internal class DestinationConfiguration : IEntityTypeConfiguration<Destination>
         builder.Property(c => c.Name).HasMaxLength(30);
         builder.Property(c => c.Description).HasMaxLength(50);
         builder.Property(c => c.Ubication).HasMaxLength(50);
-        builder.Property(c => c.Active);
     }
 }

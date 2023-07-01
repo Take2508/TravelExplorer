@@ -1,11 +1,12 @@
-using ErrorOr;
 using MediatR;
+using ErrorOr;
+using Application.Destinations.Common;
+using Domain.ValueObjects;
 
 namespace Application.Destinations;
 
 public record CreateDestinationCommand(
     string Name,
     string Description,
-    string Ubication,
-    bool Active
+    string Ubication
 ) : IRequest<ErrorOr<Unit>>;

@@ -1,12 +1,12 @@
 using Application.TouristPackages.Create;
-using Application.TouristPackages.Delete;
-using Application.TouristPackages.GetAll;
-using Application.TouristPackages.GetById;
-using Application.TouristPackages.Search;
-using Application.TouristPackages.Update;
-using ErrorOr;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Application.TouristPackages.GetAll;
+using Application.TouristPackages.Update;
+using ErrorOr;
+using Application.TouristPackages.GetById;
+using Application.TouristPackages.Delete;
+using Application.TouristPackages.Search;
 
 namespace Web.Api.Controllers;
 
@@ -20,6 +20,17 @@ public class TouristPackages : ApiController
         _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
     }
 
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        var touristPackagesResult = await _mediator.Send(new GetAllTouristPackagesQuery());
+
+        return touristPackagesResult.Match(
+            TouristPackage => Ok(touristPackagesResult.Value),
+            errors => Problem(errors)
+        );
+    }
+
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateTouristPackageCommand command)
     {
@@ -31,16 +42,6 @@ public class TouristPackages : ApiController
         );
     }
 
-    [HttpGet]
-    public async Task<IActionResult> GetAll()
-    {
-        var touristPackagesResult = await _mediator.Send(new GetAllTouristPackagesQuery());
-
-        return touristPackagesResult.Match(
-            TouristPackage => Ok(touristPackagesResult.Value),
-            errors => Problem(errors)
-        );
-    }
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(Guid id, [FromBody] UpdateTouristPackageCommand command)
     {
@@ -86,11 +87,12 @@ public class TouristPackages : ApiController
     [HttpGet("search")]
     public async Task<IActionResult> Get(string? name, string? description, DateTime? travelDate, decimal? price, string? ubication)
     {
-        var searchTouristPackagesResult = await _mediator.Send(new SearchTouristPackageQuery(name, description, travelDate, price, ubication));
+        var searchTouristPackagesResult = await _mediator.Send(new SearchTouristPackagesQuery(name, description, travelDate, price, ubication));
 
         return searchTouristPackagesResult.Match(
             touristPackages => Ok(touristPackages),
             errors => Problem(errors)
         );
     }
+
 }

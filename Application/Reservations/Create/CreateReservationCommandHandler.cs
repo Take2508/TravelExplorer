@@ -1,23 +1,22 @@
-using Domain.Customers;
+using Application.Reservations.Common;
 using Domain.Reservations;
 using Domain.Primitives;
+using Domain.Destinations;
+using Domain.ValueObjects;
 using ErrorOr;
 using MediatR;
-using Domain.ValueObjects;
 
 namespace Application.Reservations.Create;
 public sealed class CreateReservationCommandHandler : IRequestHandler<CreateReservationCommand, ErrorOr<Unit>>
 {
 
     private readonly IReservationRepository _reservationRepository;
-    private readonly ICustomerRepository _customerRepository;
     private readonly IUnitOfWork _unitofwork;
-    public CreateReservationCommandHandler(IReservationRepository reservationRepository, IUnitOfWork unitofwork, ICustomerRepository customerRepository)
+    public CreateReservationCommandHandler(IReservationRepository reservationRepository, IUnitOfWork unitofwork)
     {
 
         _reservationRepository = reservationRepository;
         _unitofwork = unitofwork;
-        _customerRepository = customerRepository;
     }
 
 
@@ -34,6 +33,7 @@ public sealed class CreateReservationCommandHandler : IRequestHandler<CreateRese
 
         await _unitofwork.SaveChangesAsync(cancellationToken);
 
+        // return new ReservationResponse();
         return Unit.Value;
     }
 }

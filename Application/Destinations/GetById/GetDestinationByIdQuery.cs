@@ -1,4 +1,4 @@
-using Destinations.Common;
+using Application.Destinations.Common;
 using ErrorOr;
 using MediatR;
 

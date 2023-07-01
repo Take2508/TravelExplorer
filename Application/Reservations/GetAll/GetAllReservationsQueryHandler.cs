@@ -5,6 +5,11 @@ using Domain.TouristPackages;
 using ErrorOr;
 using MediatR;
 
+using Domain.Primitives;
+using Domain.ValueObjects;
+using System.Runtime.InteropServices;
+
+
 namespace Application.Reservations.GetAll;
 
 internal sealed class GetAllReservationsQueryHandler : IRequestHandler<GetAllReservationsQuery, ErrorOr<IReadOnlyList<ReservationResponse>>>
@@ -49,9 +54,10 @@ internal sealed class GetAllReservationsQueryHandler : IRequestHandler<GetAllRes
                 reservation.PhoneNumber.Value,
                 touristPackage?.TravelDate ?? DateTime.Now,
                 reservation.TravelDate,
+                // reservation.TouristPackageId,
                 new TouristPackageResponse(
                     touristPackage?.Name ?? string.Empty,
-                    lineItemResponses
+                    lineItemResponses // Agrega los LineItems a la respuesta
                     )
             );
 

@@ -22,7 +22,7 @@ internal sealed class DeleteDestinationCommandHandler : IRequestHandler<DeleteDe
             return Error.NotFound("Destination.NotFound", "The destination with the provide Id was not found.");
         }
 
-        _destinationRepository.Delete(destination);
+        _destinationRepository.Remove(destination);
 
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 

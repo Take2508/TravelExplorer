@@ -23,7 +23,7 @@ internal sealed class UpdateDestinationCommandHandler : IRequestHandler<UpdateDe
             return Error.NotFound("Customer.NotFound", "The customer with the provide Id was not found.");
         }
 
-        Destination destination = Destination.UpdateDestination(command.Id, command.Name, command.Description, command.Ubication, command.Active);
+        Destination destination = Destination.UpdateDestination(command.Id, command.Name, command.Description, command.Ubication);
 
         _destinationRepository.Update(destination);
 

@@ -1,23 +1,28 @@
 using MediatR;
 using ErrorOr;
+using Domain.TouristPackages;
+using Application.Reservations.Common;
+using Domain.ValueObjects;
 
 namespace Application.Reservations.Common;
 
 public record ReservationResponse(
-    Guid ReservationCode,
+    Guid CodigoReserva,
     string Name,
     string Email,
     string PhoneNumber,
     DateTime TravelDate,
-    DateTime ReservationDate,
-    TouristPackageResponse touristPackageResponse
+    DateTime FechaReserva,
+    // TouristPackageId TouristPackageId,
+    TouristPackageResponse paqueteTuristico
 ) : IRequest<ErrorOr<ReservationResponse>>;
 
 public record TouristPackageResponse(
-    string Name,
-    List<LineItemResponse> Destinations
+    string Nombre,
+    List<LineItemResponse> Destinos  // Propiedad para los LineItems
     );
 
 public record LineItemResponse(
-    string Name,
-    string Ubication);
+    string Nombre,
+    string Ubicacion);
+

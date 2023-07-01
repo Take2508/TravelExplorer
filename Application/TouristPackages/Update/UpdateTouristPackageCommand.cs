@@ -1,7 +1,10 @@
+using Domain.Destinations;
+using Application.TouristPackages.Common;
 using Domain.ValueObjects;
 using ErrorOr;
 using MediatR;
-
+using System;
+using System.Collections.Generic;
 
 namespace Application.TouristPackages.Update
 {

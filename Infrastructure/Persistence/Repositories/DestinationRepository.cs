@@ -12,15 +12,22 @@ internal sealed class DestinationRepository : IDestinationRepository
     }
 
     public async Task<Destination?> GetByIdAsync(DestinationId id) => await _context.Destinations.SingleOrDefaultAsync(p => p.Id == id);
+    public async Task<List<Destination>> GetAll() => await _context.Destinations.ToListAsync();
+    public async Task<bool> ExistsAsync(DestinationId id) => await _context.Destinations.AnyAsync(destination => destination.Id == id);
+    public async Task<Destination?> GetById(DestinationId id) => await _context.Destinations.SingleOrDefaultAsync(p => p.Id == id);
+    public void Delete(Destination destination) => _context.Destinations.Remove(destination);
+
+
+    public void Add(Destination destination)
+    {
+        _context.Destinations.Add(destination);
+    }
     public void Update(Destination destination)
     {
         _context.Destinations.Update(destination);
     }
-    public void Delete(Destination destination) => _context.Destinations.Remove(destination);
-
-    public async Task<bool> ExistsAsync(DestinationId id) => await _context.Destinations.AnyAsync(destination => destination.Id == id);
-
-    public async Task<List<Destination>> GetAll() => await _context.Destinations.ToListAsync();
-
-    public async Task Add(Destination destination) => await _context.Destinations.AddAsync(destination);
+    public void Remove(Destination destination)
+    {
+        _context.Destinations.Remove(destination);
+    }
 }

@@ -1,28 +1,27 @@
-using Domain.TouristPackages;
+using Domain.Reservations;
 using Domain.Primitives;
 using ErrorOr;
 using MediatR;
 
+namespace Application.Reservations.Delete;
 
-namespace Application.TouristPackages.Delete;
-
-internal sealed class DeleteTouristPackageCommandHandler : IRequestHandler<DeleteTouristPackageCommand, ErrorOr<Unit>>
+internal sealed class DeleteReservationCommandHandler : IRequestHandler<DeleteReservationCommand, ErrorOr<Unit>>
 {
-    private readonly ITouristPackageRepository _touristPackageRepository;
+    private readonly IReservationRepository _reservationRepository;
     private readonly IUnitOfWork _unitOfWork;
-    public DeleteTouristPackageCommandHandler(ITouristPackageRepository touristPackageRepository, IUnitOfWork unitOfWork)
+    public DeleteReservationCommandHandler(IReservationRepository reservationRepository, IUnitOfWork unitOfWork)
     {
-        _touristPackageRepository = touristPackageRepository ?? throw new ArgumentNullException(nameof(touristPackageRepository));
+        _reservationRepository = reservationRepository ?? throw new ArgumentNullException(nameof(reservationRepository));
         _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
     }
-    public async Task<ErrorOr<Unit>> Handle(DeleteTouristPackageCommand command, CancellationToken cancellationToken)
+    public async Task<ErrorOr<Unit>> Handle(DeleteReservationCommand command, CancellationToken cancellationToken)
     {
-        if (await _touristPackageRepository.GetByIdAsync(new TouristPackageId(command.Id)) is not TouristPackage touristPackage)
+        if (await _reservationRepository.GetByIdAsync(new ReservationId(command.Id)) is not Reservation reservation)
         {
-            return Error.NotFound("TouristPackage.NotFound", "The tour package with the ID provided was not found.");
+            return Error.NotFound("Reservation.NotFound", "The reservation with the provide Id was not found.");
         }
 
-        _touristPackageRepository.Delete(touristPackage);
+        _reservationRepository.Delete(reservation);
 
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 

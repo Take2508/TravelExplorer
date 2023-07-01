@@ -5,7 +5,15 @@ using Domain.TouristPackages;
 using ErrorOr;
 using MediatR;
 
-namespace Application.Reservations.GetById;
+using Domain.Primitives;
+using Domain.ValueObjects;
+using System.Runtime.InteropServices;
+using Application.Reservations.GetById;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+namespace Application.Reservations.GetAll;
 
 internal sealed class GetReservationByIdQueryHandler : IRequestHandler<GetReservationByIdQuery, ErrorOr<ReservationResponse>>
 {

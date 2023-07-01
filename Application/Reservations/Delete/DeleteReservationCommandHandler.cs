@@ -1,27 +1,27 @@
-using Domain.Reservations;
+using Domain.TouristPackages;
 using Domain.Primitives;
 using ErrorOr;
 using MediatR;
 
-namespace Application.Reservations.Delete;
+namespace Application.TouristPackages.Delete;
 
-internal sealed class DeleteReservationCommandHandler : IRequestHandler<DeleteReservationCommand, ErrorOr<Unit>>
+internal sealed class DeleteTouristPackageCommandHandler : IRequestHandler<DeleteTouristPackageCommand, ErrorOr<Unit>>
 {
-    private readonly IReservationRepository _reservationRepository;
+    private readonly ITouristPackageRepository _touristPackageRepository;
     private readonly IUnitOfWork _unitOfWork;
-    public DeleteReservationCommandHandler(IReservationRepository reservationRepository, IUnitOfWork unitOfWork)
+    public DeleteTouristPackageCommandHandler(ITouristPackageRepository touristPackageRepository, IUnitOfWork unitOfWork)
     {
-        _reservationRepository = reservationRepository ?? throw new ArgumentNullException(nameof(reservationRepository));
+        _touristPackageRepository = touristPackageRepository ?? throw new ArgumentNullException(nameof(touristPackageRepository));
         _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
     }
-    public async Task<ErrorOr<Unit>> Handle(DeleteReservationCommand command, CancellationToken cancellationToken)
+    public async Task<ErrorOr<Unit>> Handle(DeleteTouristPackageCommand command, CancellationToken cancellationToken)
     {
-        if (await _reservationRepository.GetByIdAsync(new ReservationId(command.Id)) is not Reservation reservation)
+        if (await _touristPackageRepository.GetByIdAsync(new TouristPackageId(command.Id)) is not TouristPackage touristPackage)
         {
-            return Error.NotFound("Reservation.NotFound", "The reservation with the provide Id was not found.");
+            return Error.NotFound("TouristPackage.NotFound", "The touristPackage with the provide Id was not found.");
         }
 
-        _reservationRepository.Delete(reservation);
+        _touristPackageRepository.Delete(touristPackage);
 
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 

@@ -3,7 +3,11 @@ using Domain.TouristPackages;
 using Domain.Destinations;
 using ErrorOr;
 using MediatR;
+
 using Domain.Primitives;
+using Domain.ValueObjects;
+using System.Runtime.InteropServices;
+
 
 namespace Application.TouristPackages.GetAll;
 

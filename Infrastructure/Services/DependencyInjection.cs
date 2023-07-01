@@ -1,5 +1,5 @@
 using Application.Data;
-using Domain.Customers;
+// using Domain.Customers;
 using Domain.Reservations;
 using Domain.Primitives;
 using Domain.Destinations;
@@ -22,12 +22,12 @@ public static class DependencyInjection
 
     private static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("Database")));
+        services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("SqlServer")));
 
         services.AddScoped<IApplicationDbContext>(sp => sp.GetRequiredService<ApplicationDbContext>());
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<ApplicationDbContext>());
 
-        services.AddScoped<ICustomerRepository, CustomerRepository>();
+        // services.AddScoped<ICustomerRepository, CustomerRepository>();
         services.AddScoped<IReservationRepository, ReservationRepository>();
         services.AddScoped<IDestinationRepository, DestinationRepository>();
         services.AddScoped<ITouristPackageRepository, TouristPackageRepository>();

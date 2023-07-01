@@ -1,5 +1,7 @@
 using MediatR;
 using ErrorOr;
+using Application.TouristPackages.Common;
+using Domain.ValueObjects;
 
 namespace Application.TouristPackages.Common;
 
@@ -18,3 +20,4 @@ public record MoneyResponse(
     );
 
 public record LineItemResponse(string Name, string Ubication);
+

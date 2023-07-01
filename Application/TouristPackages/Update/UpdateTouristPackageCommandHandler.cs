@@ -1,9 +1,14 @@
+using Application.TouristPackages.Common;
 using Domain.TouristPackages;
 using Domain.Reservations;
 using Domain.Primitives;
 using Domain.Destinations;
+using Domain.ValueObjects;
 using ErrorOr;
 using MediatR;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Application.TouristPackages.Update
 {
@@ -60,11 +65,14 @@ namespace Application.TouristPackages.Update
                 }
             }
 
+            // Remove line items that were not included in the command
             var lineItemsToRemove = touristPackage.LineItems.Where(li => !command.Items.Any(item => new LineItemId(item.DestinationId) == li.Id)).ToList();
             foreach (var lineItem in lineItemsToRemove)
             {
                 touristPackage.RemoveLineItem(lineItem.Id, _touristPackageRepository);
             }
+
+
 
             foreach (var item in command.Items)
             {

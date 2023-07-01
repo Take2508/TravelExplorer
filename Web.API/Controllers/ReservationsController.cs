@@ -1,12 +1,13 @@
 using Application.Reservations.Create;
-using Application.Reservations.Delete;
-using Application.Reservations.GetAll;
-using Application.Reservations.GetById;
-using Application.Reservations.Update;
-using ErrorOr;
 using MediatR;
+using Application.Reservations.GetAll;
 
 using Microsoft.AspNetCore.Mvc;
+using ErrorOr;
+using Application.TouristPackages.Update;
+using Application.Reservations.Update;
+using Application.Reservations.GetById;
+using Application.Reservations.Delete;
 
 namespace Web.Api.Controllers;
 
@@ -20,16 +21,6 @@ public class Reservations : ApiController
         _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Create([FromBody] CreateReservationCommand command)
-    {
-        var createReservationResult = await _mediator.Send(command);
-
-        return createReservationResult.Match(
-            Reservation => Ok(createReservationResult.Value),
-            errors => Problem(errors)
-        );
-    }
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -37,6 +28,17 @@ public class Reservations : ApiController
 
         return reservationsResult.Match(
             Reservation => Ok(reservationsResult.Value),
+            errors => Problem(errors)
+        );
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create([FromBody] CreateReservationCommand command)
+    {
+        var createReservationResult = await _mediator.Send(command);
+
+        return createReservationResult.Match(
+            Reservation => Ok(createReservationResult.Value),
             errors => Problem(errors)
         );
     }
@@ -60,6 +62,7 @@ public class Reservations : ApiController
             errors => Problem(errors)
         );
     }
+
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(Guid id)
     {

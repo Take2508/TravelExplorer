@@ -1,5 +1,5 @@
 using Application.Data;
-using Domain.Customers;
+// using Domain.Customers;
 using Domain.Reservations;
 using Domain.TouristPackages;
 using Domain.Primitives;
@@ -18,7 +18,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWor
         _publisher = publisher ?? throw new ArgumentNullException(nameof(publisher));
     }
 
-    public DbSet<Customer> Customers { get; set; }
+    // public DbSet<Customer> Customers { get; set; }
     public DbSet<LineItem> LineItems { get; set; }
     public DbSet<Reservation> Reservations { get; set; }
     public DbSet<Destination> Destinations { get; set; }

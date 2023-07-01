@@ -7,6 +7,5 @@ public record UpdateDestinationCommand(
     Guid Id,
     string Name,
     string Description,
-    string Ubication,
-    bool Active
+    string Ubication
     ) : IRequest<ErrorOr<Unit>>;

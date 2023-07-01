@@ -1,8 +1,10 @@
 using Domain.Reservations;
 using Domain.TouristPackages;
 using Domain.ValueObjects;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infrastructure.Persistence.Configuration;
 
@@ -32,5 +34,7 @@ public class ReservationConfiguration : IEntityTypeConfiguration<Reservation>
         builder.HasOne<TouristPackage>()
         .WithMany()
         .HasForeignKey(o => o.TouristPackageId);
+
+        // builder.Property(li => li.TravelDate);
     }
 }

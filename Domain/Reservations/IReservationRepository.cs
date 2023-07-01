@@ -9,8 +9,9 @@ public interface IReservationRepository
     bool HasOneLineItem(Reservation reservation);
     Task<List<Reservation>> GetAll();
     Task<Reservation?> GetByIdAsync(ReservationId id);
-    Task<bool> ExistsAsync(ReservationId id);
     void Add(Reservation reservation);
+    Task<bool> ExistsAsync(ReservationId id);
+    void UpdateReservation(Reservation reservation);
     void Update(Reservation reservation);
     void Delete(Reservation reservation);
 }

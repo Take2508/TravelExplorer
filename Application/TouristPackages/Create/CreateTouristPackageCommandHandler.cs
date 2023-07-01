@@ -1,9 +1,12 @@
+using Application.TouristPackages.Common;
 using Domain.Primitives;
 using Domain.Destinations;
+using Domain.ValueObjects;
 using ErrorOr;
 using MediatR;
 using Domain.TouristPackages;
-
+using Domain.Reservations;
+using System.Runtime.InteropServices;
 
 namespace Application.TouristPackages.Create;
 public sealed class CreateTouristPackageCommandHandler : IRequestHandler<CreateTouristPackageCommand, ErrorOr<Unit>>
@@ -21,6 +24,8 @@ public sealed class CreateTouristPackageCommandHandler : IRequestHandler<CreateT
 
     public async Task<ErrorOr<Unit>> Handle(CreateTouristPackageCommand command, CancellationToken cancellationToken)
     {
+
+        //var name = new TouristPackage(new TouristPackageId(Guid.NewGuid()), command.Name);
         var touristPackage = TouristPackage.Create(
             command.Name,
             command.Description,
@@ -40,6 +45,7 @@ public sealed class CreateTouristPackageCommandHandler : IRequestHandler<CreateT
 
         await _unitofwork.SaveChangesAsync(cancellationToken);
 
+        // return new TouristPackageResponse();
         return Unit.Value;
     }
 }

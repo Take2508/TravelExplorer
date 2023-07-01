@@ -1,4 +1,4 @@
-using Destinations.Common;
+using Application.Destinations.Common;
 using Domain.Destinations;
 using ErrorOr;
 using MediatR;
@@ -26,8 +26,7 @@ internal sealed class GetDestinationByIdQueryHandler : IRequestHandler<GetDestin
             Destination.Id.Value,
             Destination.Name,
             Destination.Description,
-            Destination.Ubication,
-            Destination.Active
+            Destination.Ubication
             );
     }
 }

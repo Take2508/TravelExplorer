@@ -46,27 +46,51 @@ D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\Domain\obj\Debug\net7.0\Dom
 D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\Domain\obj\Debug\net7.0\refint\Domain.dll
 D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\Domain\obj\Debug\net7.0\Domain.pdb
 D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\Domain\obj\Debug\net7.0\ref\Domain.dll
-D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\src\Domain\bin\Debug\net7.0\Domain.deps.json
-D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\src\Domain\bin\Debug\net7.0\Domain.dll
-D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\src\Domain\bin\Debug\net7.0\Domain.pdb
-D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\src\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
-D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\src\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
-D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\src\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
-D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\src\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
-D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\src\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
-D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\src\Domain\obj\Debug\net7.0\Domain.dll
-D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\src\Domain\obj\Debug\net7.0\refint\Domain.dll
-D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\src\Domain\obj\Debug\net7.0\Domain.pdb
-D:\Escritorio\Modulo 3-Pree\TravelExplorer _Respaldo\src\Domain\obj\Debug\net7.0\ref\Domain.dll
-C:\Users\Kevin Vasquez\Desktop\TravelExplorer\Domain\bin\Debug\net7.0\Domain.deps.json
-C:\Users\Kevin Vasquez\Desktop\TravelExplorer\Domain\bin\Debug\net7.0\Domain.dll
-C:\Users\Kevin Vasquez\Desktop\TravelExplorer\Domain\bin\Debug\net7.0\Domain.pdb
-C:\Users\Kevin Vasquez\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
-C:\Users\Kevin Vasquez\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Kevin Vasquez\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
-C:\Users\Kevin Vasquez\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
-C:\Users\Kevin Vasquez\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
-C:\Users\Kevin Vasquez\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\Domain.dll
-C:\Users\Kevin Vasquez\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\refint\Domain.dll
-C:\Users\Kevin Vasquez\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\Domain.pdb
-C:\Users\Kevin Vasquez\Desktop\TravelExplorer\Domain\obj\Debug\net7.0\ref\Domain.dll
+C:\laragon\www\TravelExplorer\Domain\bin\Debug\net7.0\Domain.deps.json
+C:\laragon\www\TravelExplorer\Domain\bin\Debug\net7.0\Domain.dll
+C:\laragon\www\TravelExplorer\Domain\bin\Debug\net7.0\Domain.pdb
+C:\laragon\www\TravelExplorer\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+C:\laragon\www\TravelExplorer\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\laragon\www\TravelExplorer\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\laragon\www\TravelExplorer\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\laragon\www\TravelExplorer\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+C:\laragon\www\TravelExplorer\Domain\obj\Debug\net7.0\Domain.dll
+C:\laragon\www\TravelExplorer\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\laragon\www\TravelExplorer\Domain\obj\Debug\net7.0\Domain.pdb
+C:\laragon\www\TravelExplorer\Domain\obj\Debug\net7.0\ref\Domain.dll
+C:\laragon\www\M2\TravelExplorer\Domain\bin\Debug\net7.0\Domain.deps.json
+C:\laragon\www\M2\TravelExplorer\Domain\bin\Debug\net7.0\Domain.dll
+C:\laragon\www\M2\TravelExplorer\Domain\bin\Debug\net7.0\Domain.pdb
+C:\laragon\www\M2\TravelExplorer\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+C:\laragon\www\M2\TravelExplorer\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\laragon\www\M2\TravelExplorer\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\laragon\www\M2\TravelExplorer\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\laragon\www\M2\TravelExplorer\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+C:\laragon\www\M2\TravelExplorer\Domain\obj\Debug\net7.0\Domain.dll
+C:\laragon\www\M2\TravelExplorer\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\laragon\www\M2\TravelExplorer\Domain\obj\Debug\net7.0\Domain.pdb
+C:\laragon\www\M2\TravelExplorer\Domain\obj\Debug\net7.0\ref\Domain.dll
+C:\laragon\www\M2\TravelExplorers\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+C:\laragon\www\M2\TravelExplorers\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\laragon\www\M2\TravelExplorers\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\laragon\www\M2\TravelExplorers\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\laragon\www\M2\TravelExplorers\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+C:\laragon\www\M2\TravelExplorers\Domain\obj\Debug\net7.0\Domain.dll
+C:\laragon\www\M2\TravelExplorers\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\laragon\www\M2\TravelExplorers\Domain\obj\Debug\net7.0\Domain.pdb
+C:\laragon\www\M2\TravelExplorers\Domain\bin\Debug\net7.0\Domain.deps.json
+C:\laragon\www\M2\TravelExplorers\Domain\bin\Debug\net7.0\Domain.dll
+C:\laragon\www\M2\TravelExplorers\Domain\bin\Debug\net7.0\Domain.pdb
+C:\laragon\www\M2\TravelExplorers\Domain\obj\Debug\net7.0\ref\Domain.dll
+C:\Users\Kevin Vasquez\Desktop\Final\TaskDDD\Domain\bin\Debug\net7.0\Domain.deps.json
+C:\Users\Kevin Vasquez\Desktop\Final\TaskDDD\Domain\bin\Debug\net7.0\Domain.dll
+C:\Users\Kevin Vasquez\Desktop\Final\TaskDDD\Domain\bin\Debug\net7.0\Domain.pdb
+C:\Users\Kevin Vasquez\Desktop\Final\TaskDDD\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+C:\Users\Kevin Vasquez\Desktop\Final\TaskDDD\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kevin Vasquez\Desktop\Final\TaskDDD\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Kevin Vasquez\Desktop\Final\TaskDDD\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\Users\Kevin Vasquez\Desktop\Final\TaskDDD\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Kevin Vasquez\Desktop\Final\TaskDDD\Domain\obj\Debug\net7.0\Domain.dll
+C:\Users\Kevin Vasquez\Desktop\Final\TaskDDD\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\Users\Kevin Vasquez\Desktop\Final\TaskDDD\Domain\obj\Debug\net7.0\Domain.pdb
+C:\Users\Kevin Vasquez\Desktop\Final\TaskDDD\Domain\obj\Debug\net7.0\ref\Domain.dll

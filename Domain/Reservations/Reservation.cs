@@ -43,16 +43,16 @@ public sealed class Reservation : AgregateRoot
         return reservation;
     }
 
-    // public void Update(string name, string email, PhoneNumber phoneNumber, TouristPackageId touristPackageId, DateTime traveldate)
-    // {
-    //     Name = name;
-    //     Email = email;
-    //     PhoneNumber = phoneNumber;
-    //     TouristPackageId = touristPackageId;
-    //     TravelDate = traveldate;
-    // }
+    public void Update(string name, string email, PhoneNumber phoneNumber, TouristPackageId touristPackageId, DateTime traveldate)
+    {
+        Name = name;
+        Email = email;
+        PhoneNumber = phoneNumber;
+        TouristPackageId = touristPackageId;
+        TravelDate = traveldate;
+    }
 
-    public static Reservation Update(
+    public static Reservation UpdateReservation(
         Guid id,
         string name,
         string email,

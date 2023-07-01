@@ -1,7 +1,6 @@
-
-using Destinations.Common;
 using ErrorOr;
 using MediatR;
+using Application.Destinations.Common;
 
 namespace Application.Destinations.GetAll;
 
