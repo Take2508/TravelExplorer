@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Web.API\\Web.API.csproj": {}
+    "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Web.API\\Web.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Application\\Application.csproj": {
+    "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\Kevin Vasquez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Application\\obj\\",
+        "outputPath": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kevin Vasquez\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Domain\\Domain.csproj"
+              "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Domain\\Domain.csproj"
               }
             }
           }
@@ -42,9 +42,25 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "ErrorOr": {
+              "target": "Package",
+              "version": "[1.2.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.5.2, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
             }
           },
           "imports": [
@@ -67,14 +83,14 @@
         }
       }
     },
-    "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Domain\\Domain.csproj": {
+    "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Kevin Vasquez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kevin Vasquez\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -101,9 +117,21 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "ErrorOr": {
+              "target": "Package",
+              "version": "[1.2.1, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
             }
           },
           "imports": [
@@ -126,14 +154,14 @@
         }
       }
     },
-    "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Kevin Vasquez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kevin Vasquez\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -148,71 +176,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Application\\Application.csproj"
+              "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Application\\Application.csproj"
               },
-              "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Domain\\Domain.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.107\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Web.API\\Web.API.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Web.API\\Web.API.csproj",
-        "projectName": "Web.API",
-        "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Web.API\\Web.API.csproj",
-        "packagesPath": "C:\\Users\\Kevin Vasquez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Web.API\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\Kevin Vasquez\\AppData\\Roaming\\NuGet\\NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net7.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
-            "projectReferences": {
-              "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Application\\Application.csproj"
-              },
-              "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Domain\\Domain.csproj"
               }
             }
           }
@@ -227,13 +195,89 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.107\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Web.API\\Web.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Web.API\\Web.Api.csproj",
+        "projectName": "Web.Api",
+        "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Web.API\\Web.Api.csproj",
+        "packagesPath": "C:\\Users\\Kevin Vasquez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Web.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Kevin Vasquez\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Application\\Application.csproj"
+              },
+              "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Infrastructure\\Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "ErrorOr": {
+              "target": "Package",
+              "version": "[1.2.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[7.0.7, )"
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.5.0, )"
+              "version": "[6.4.0, )"
             }
           },
           "imports": [

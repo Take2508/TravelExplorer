@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Domain\\Domain.csproj": {}
+    "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Domain\\Domain.csproj": {
+    "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Kevin Vasquez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kevin Vasquez\\Desktop\\EvaluacionModulo\\TravelExplorer\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Kevin Vasquez\\Desktop\\TravelExplorer\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kevin Vasquez\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,9 +38,21 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "ErrorOr": {
+              "target": "Package",
+              "version": "[1.2.1, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
             }
           },
           "imports": [
